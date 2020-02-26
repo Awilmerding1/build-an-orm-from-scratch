@@ -7,5 +7,6 @@ DB = {conn: SQLite3::Database.new('db/pets.db')}
 
 Dog.create_table
 
-d = Dog.new("Fido", 12)
-d.save
+Dog.create('Fido', 1) if !Dog.find_by_name('Fido')
+Dog.create('Fluffy', 8) if !Dog.find_by_name('Fluffy')
+Dog.create('Sandy', 5) if !Dog.find_by_name('Sandy')
